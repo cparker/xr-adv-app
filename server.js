@@ -21,8 +21,9 @@ const fs = require('fs')
 
 module.exports = (() => {
 
+    const adventureDir = 'adventures'
     const appProps = JSON.parse(fs.readFileSync('appProps.json', 'utf-8'))
-    console.log('appProps',appProps)
+    console.log('appProps', appProps)
 
     const serviceURL = '/mydata'
     const dbName = appProps.dbName || 'databaseName'
@@ -113,6 +114,27 @@ module.exports = (() => {
                 })
             })
     }
+
+    let loadAdventureList = function(req, res, next) {
+        let adventures = fs.readdirSync(adventureDir)
+        let jsonAdventures = _.map(_.filter(adventures, a => {
+            return a.indexOf('.DS_') === -1
+        }), (advdirName) => {
+            let meta = JSON.parse(fs.readFileSync(adventureDir + '/' + advdirName + '/' + 'meta.json', 'utf-8'))
+            meta.name = advdirName
+            return meta
+        })
+        res.json(jsonAdventures);
+    }
+
+    let loadAdventureMarkdown = function(req, res, next) {
+        console.log('query', req.query)
+        let md = fs.readFileSync(adventureDir + '/' + req.query.name + '/' + 'Readme.md', 'utf-8')
+        res.send(md);
+    }
+
+    app.get('/loadAdventureList', loadAdventureList)
+    app.get('/loadAdventureMarkdown', loadAdventureMarkdown)
 
     app.post(serviceURL, setData)
     app.get(serviceURL, getData)

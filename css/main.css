@@ -1,0 +1,65 @@
+html {
+  height: 100%;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13pt;
+  overflow: hidden;
+  padding: 0;
+  margin: 0; }
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 10px;
+  background-color: #c8c8c8; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+a:hover {
+  font-weight: bold; }
+
+/* Styles for phones */
+.main-column {
+  display: flex;
+  flex-direction: column; }
+  .main-column .top {
+    border-bottom: 4px solid black; }
+  .main-column .bottom {
+    display: flex;
+    flex-direction: row; }
+  .main-column .bottom-center {
+    background: #d6d6be;
+    flex: 5;
+    height: 100%;
+    overflow-y: auto;
+    padding: 0.5em; }
+  .main-column .bottom-right {
+    background: #c8c8c8;
+    flex: 1; }
+
+.adventure:hover {
+  border-right: 4px solid gray; }
+
+.adventure.selected {
+  border-right: 4px solid black; }
+
+.adventure {
+  padding: 0.2em;
+  margin: 0.2em;
+  cursor: pointer; }
+  .adventure .date {
+    font-size: 10pt; }
+
+.adventure-image {
+  border: 2px solid gray;
+  cursor: pointer; }

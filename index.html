@@ -6,15 +6,31 @@
         <script src="bower_components/underscore/underscore-min.js"></script>
         <script src="node_modules/lodash/index.js"></script>
         <script src="bower_components/moment/moment.js"></script>
+        <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+        <script src="bower_components/showdown/dist/showdown.js"></script>
+        <script src="bower_components/ng-showdown/dist/ng-showdown.js"></script>
         <script src="main.js"></script>
 
-        <link rel="stylesheet" href="main.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
+        <link rel="stylesheet" href="css/main.css">
     </head>
 
     <body>
-      <div ui-view>
-
-      </div>
+        <div class="main-column">
+            <div class="top">
+              <h1>XR Adventures</h1>
+              I explore Colorado on an XR400 for fun
+            </div>
+            <div class="bottom">
+                <div ui-view class="bottom-center"></div>
+                <div class="bottom-right" ng-controller="welcomeCtrl">
+                    <div class="adventure" ng-class="{selected:adventure.selected}" ng-repeat="adventure in adventureList" ng-click="chooseAdventure(adventure)">
+                        <div class="title">{{adventure.title}}</div>
+                        <div class="date">{{adventure.date | date : 'fullDate'}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </body>
 

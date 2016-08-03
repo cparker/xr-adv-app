@@ -1,0 +1,59 @@
+@import 'basics';
+
+.main-column {
+  display:flex;
+  flex-direction: column;
+
+  .top {
+    border-bottom:4px solid black;
+  }
+
+  .bottom {
+    display:flex;
+    flex-direction:row;
+  }
+
+  .bottom-center {
+    background: $centerColor;
+    flex:5;
+    height:100%;
+    overflow-y: auto;
+    padding:0.5em;
+  }
+
+  .bottom-right {
+    background: $backgroundColor;
+    flex:1;
+  }
+}
+
+.adventure:hover {
+  border-right:4px solid gray;
+}
+
+.adventure.selected {
+  border-right:4px solid black;
+}
+
+.adventure {
+  padding: 0.2em;
+  margin: 0.2em;
+  cursor: pointer;
+
+  .title {
+
+  }
+
+  .date {
+    font-size: 10pt;
+  }
+}
+
+.adventure-body {
+}
+
+
+.adventure-image {
+  border:2px solid gray;
+  cursor: pointer;
+}
