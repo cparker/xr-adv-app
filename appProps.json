@@ -1,0 +1,5 @@
+{
+  "dbName" : "xrAdventures",
+  "mongoURL" : "mongodb://localhost/xrAdventures",
+  "collectionName" : "xrAdventures"
+}

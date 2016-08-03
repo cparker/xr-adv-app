@@ -16,14 +16,18 @@ const Async = require('asyncawait/async')
 const mongodb = require('mongodb')
 const gju = require('geojson-utils')
 const nodemailer = require('nodemailer')
+const fs = require('fs')
 
 
 module.exports = (() => {
 
+    const appProps = JSON.parse(fs.readFileSync('appProps.json', 'utf-8'))
+    console.log('appProps',appProps)
+
     const serviceURL = '/mydata'
-    const dbName = 'databaseName'
-    const defaultDBConnection = `mongodb://localhost/${dbName}`
-    const mongoCollectionName = 'collectionName'
+    const dbName = appProps.dbName || 'databaseName'
+    const defaultDBConnection = appProps.mongoURL || `mongodb://localhost/${dbName}`
+    const mongoCollectionName = appProps.collectionName || 'collectionName'
 
     let mongoClient = bluebird.promisifyAll(mongodb).MongoClient;
 

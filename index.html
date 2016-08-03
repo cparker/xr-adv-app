@@ -1,18 +1,20 @@
-<html lang="en" ng-app="cpNgTemplate">
+<html lang="en" ng-app="xrAdventureApp">
 
     <head>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
         <script src="bower_components/underscore/underscore-min.js"></script>
         <script src="node_modules/lodash/index.js"></script>
-        <script src="bower_components/angular/angular.min.js"></script>
         <script src="bower_components/moment/moment.js"></script>
         <script src="main.js"></script>
 
         <link rel="stylesheet" href="main.css">
     </head>
 
-    <body ng-controller="AppCtrl">
-      client mock data
-      <pre>{{data | json}}</pre>
+    <body>
+      <div ui-view>
+
+      </div>
 
     </body>
 
