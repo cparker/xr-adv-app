@@ -14,19 +14,24 @@ app.config(['$stateProvider', '$urlRouterProvider', '$showdownProvider',
                 url: '/showAdventure/:name',
                 templateUrl: 'partials/adventure.html',
                 controller: 'showAdventureCtrl'
+            }).state('showAdventure.photo', {
+                url: '/showAdventure/:name/:photourl',
+                templateUrl: 'partials/view-photo.html',
+                controller: 'showAdventureCtrl'
             });
 
         showdownImgExtension = function() {
             var ext1 = {
                 type: 'output',
                 regex: /(.*?)<img(.*?)/g,
-                replace: '$1<img class="adventure-image" ng-click="root.clickImage()" {{testme}} $2'
+                replace: '$1<img class="adventure-image" $2'
             };
 
             return [ext1];
         };
 
         $showdownProvider.setOption('parseImgDimensions', true);
+        $showdownProvider.setOption('tables', true);
         $showdownProvider.loadExtension(showdownImgExtension);
     }
 ]);
@@ -35,8 +40,8 @@ app.factory('dataService', ['$q', '$http', function($q, $http) {
 
     var someDataURL = '/loadMarkdown';
 
-    var loadAdventureMarkdown = function(adventureName) {
-        return $http.get('/loadAdventureMarkdown', {
+    var loadAdventureDetails = function(adventureName) {
+        return $http.get('/loadAdventureDetails', {
             params: {
                 name: adventureName
             }
@@ -48,7 +53,7 @@ app.factory('dataService', ['$q', '$http', function($q, $http) {
     };
 
     return {
-        loadAdventureMarkdown: loadAdventureMarkdown,
+        loadAdventureDetails: loadAdventureDetails,
         loadAdventureList: loadAdventureList
     };
 }]);
@@ -98,17 +103,45 @@ app.controller('welcomeCtrl', ['$scope', 'dataService', '$state',
 ]);
 
 
-app.controller('showAdventureCtrl', ['$scope', 'dataService', '$stateParams', '$rootScope', '$timeout',
-    function($scope, dataService, $stateParams, $rootScope, $timeout) {
+app.controller('showAdventureCtrl', ['$scope', 'dataService', '$stateParams', '$rootScope', '$timeout', '$document', '$element', '$state',
+    function($scope, dataService, $stateParams, $rootScope, $timeout, $document, $element, $state) {
+
+        console.log('stateParams', $stateParams);
+        $scope.photourl = $stateParams.photourl;
 
         $rootScope.clickImage = function() {
             console.log('image was clicked');
         };
 
-        dataService.loadAdventureMarkdown($stateParams.name)
-            .then(function(result) {
-                $scope.markdown = result.data;
 
+        $scope.handlePhotoClick = function(clicked) {
+            $scope.photoOpacity= 0;
+            console.log('clicked', clicked);
+            console.log('element', angular.element(clicked.srcElement));
+
+            // show the photo
+            $state.go('showAdventure.photo', {
+                photourl: angular.element(clicked.srcElement)[0].currentSrc
+            });
+
+            // wait until the photo gets written into the DOM, then set the opacity
+            $timeout(function() {
+                $scope.photoOpacity= 1;
+            }, 100);
+        };
+
+        dataService.loadAdventureDetails($stateParams.name)
+            .then(function(result) {
+                $scope.details = result.data;
+
+                // wait a second for the HTML to render, then attach click handlers to the images
+                $timeout(function() {
+                    var x = $document.find('img');
+                    _.each(x, function(i) {
+                        console.log('adding click handler to', i);
+                        angular.element(i).bind('click', $scope.handlePhotoClick);
+                    })
+                }, 300);
             }, function(err) {
                 console.log('error', err);
             })

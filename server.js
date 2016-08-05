@@ -127,14 +127,27 @@ module.exports = (() => {
         res.json(jsonAdventures);
     }
 
-    let loadAdventureMarkdown = function(req, res, next) {
+    let loadAdventureDetails = function(req, res, next) {
         console.log('query', req.query)
-        let md = fs.readFileSync(adventureDir + '/' + req.query.name + '/' + 'Readme.md', 'utf-8')
-        res.send(md);
+        let images = _.filter(fs.readdirSync(adventureDir + '/' + req.query.name), fn => {
+            return fn.match(/^.*?(.png|.jpg|.gif)$/)
+        })
+        console.log('images', images)
+        let meta = JSON.parse(fs.readFileSync(adventureDir + '/' + req.query.name + '/' + 'meta.json', 'utf-8'))
+        let newImages = _.object(_.map(meta.images, (value, key) => {
+            let matchingFile = _.find(images, i => {
+                return i.startsWith(key)
+            })
+            return [matchingFile,value]
+        }))
+        meta.images = newImages
+        meta.name = req.query.name
+
+        res.json(meta);
     }
 
     app.get('/loadAdventureList', loadAdventureList)
-    app.get('/loadAdventureMarkdown', loadAdventureMarkdown)
+    app.get('/loadAdventureDetails', loadAdventureDetails)
 
     app.post(serviceURL, setData)
     app.get(serviceURL, getData)

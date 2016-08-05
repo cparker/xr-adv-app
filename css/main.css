@@ -13,6 +13,10 @@ body {
   padding: 10px;
   background-color: #c8c8c8; }
 
+p {
+  margin: 0;
+  padding: 0; }
+
 h1,
 h2,
 h3,
@@ -60,6 +64,43 @@ a:hover {
   .adventure .date {
     font-size: 10pt; }
 
-.adventure-image {
-  border: 2px solid gray;
-  cursor: pointer; }
+.adventure-body .title {
+  margin-left: 0.5em; }
+
+.adventure-body .header {
+  margin-left: 0.9em; }
+
+.images {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+  .images .image {
+    margin: 0.8em;
+    position: relative;
+    flex: 1;
+    min-width: 450px; }
+    .images .image img {
+      width: 100%;
+      min-width: 450px;
+      object-fit: contain; }
+
+.caption {
+  box-shadow: 0 0 5px 5px black;
+  position: absolute;
+  top: 0;
+  left: 5px;
+  background: black;
+  opacity: 0.6;
+  color: white;
+  max-width: 70%;
+  padding: 0.4em;
+  margin-left: 0.2em;
+  margin-top: 0.5em;
+  font-size: 0.9em; }
+
+.photo-dialog {
+  z-index: 1000;
+  position: absolute;
+  transition: visibility 0s, opacity 0.25s linear; }
+  .photo-dialog img {
+    max-width: 80%; }
