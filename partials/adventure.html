@@ -5,14 +5,10 @@
     <h2 class="title">{{details.title}}</h2>
     <div class="header" markdown-to-html="details.header"></div>
     <div class="images">
-      <div ng-repeat="fileNameAndCaption in details.images" class="image">
-        <img src="/adventures/{{details.name}}/{{fileNameAndCaption[0]}}"/>
-        <p class="caption" markdown-to-html="fileNameAndCaption[1]"></p>
-
-
-      </div>
+        <div ng-repeat="fileNameAndCaption in details.images" class="image">
+            <img src="/adventures/{{details.name}}/{{fileNameAndCaption[0]}}"/>
+            <p class="caption" markdown-to-html="fileNameAndCaption[1]"></p>
+        </div>
     </div>
-    <div class="footer" markdown-to-html="details.footer"></div>
-
-
+    <div ng-repeat="footer in details.footer" class="footer" markdown-to-html="footer"></div>
 </div>

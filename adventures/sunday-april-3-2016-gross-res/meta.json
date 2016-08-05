@@ -2,15 +2,15 @@
     "title": "Gross Reservoir",
     "date": "2016-04-03T00:00:00-0600",
 
-    "header": "I started today intending to ride all the way up to Rollinsville, then on to Gamble Gulch Rd. off peak to peak HW.  But by the time I was halfway up Coal Creek Canyon it was only 50 degrees and I was a bit under dressed.  I settled for a shorter ride around Gross Res instead.",
+    "header": "I started today intending to ride all the way up to Rollinsville, then on to Gamble Gulch Rd. off peak to peak HW.  But by the time I was halfway up Coal Creek Canyon it was only 50 degrees and I was a bit under dressed.  I settled for a shorter ride around [Gross Res](http://www.denverwater.org/Recreation/GrossReservoir/) instead.",
 
-    "images": {
-        "01" : "Today's route",
-        "02": "The road gets more interesting after turning off of HW 72",
-        "03": "At this point you have to decide to visit either the N or S shore",
-        "04": "These picnic areas are nice, but crazy windy and cold today",
-        "05": "This road called Miremont Rd, which I don't remember seeing, heads back to Hw72.  Something to explore next time.",
-        "06": "Speed and elevation of the trip"
-    },
-    "footer": "Here is [the full route (.gpx)](xr-adventure-sunday-4-3-2016.gpx)"
+    "images": [
+        ["01", "Today's route"],
+        ["02", "The road gets more interesting after turning off of HW 72"],
+        ["03", "At this point you have to decide to visit either the N or S shore"],
+        ["04", "These picnic areas are nice, but crazy windy and cold today"],
+        ["05", "This road called Miremont Rd, which I don't remember seeing, heads back to Hw72.  Something to explore next time."],
+        ["06", "Speed and elevation of the trip"]
+    ],
+    "footer": ["Here is [the full route (.gpx)](/adventures/sunday-april-3-2016-gross-res/xr-adventure-sunday-4-3-2016.gpx)"]
 }
