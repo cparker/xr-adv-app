@@ -1,17 +1,18 @@
 <div class="adventure-body">
+    <!--p markdown-to-html="testThisMarkdown"></p-->
     <div ui-view></div>
 
     <h2 class="title">{{details.title}}</h2>
-    <div class="header">{{details.header}}</div>
+    <div class="header" markdown-to-html="details.header"></div>
     <div class="images">
       <div ng-repeat="(fileName,caption) in details.images" class="image">
         <img src="/adventures/{{details.name}}/{{fileName}}"/>
-        <p class="caption">{{caption}}</p>
+        <p class="caption" markdown-to-html="caption"></p>
 
 
       </div>
     </div>
-    <div class="footer"></div>
+    <div class="footer" markdown-to-html="details.footer"></div>
 
 
 </div>

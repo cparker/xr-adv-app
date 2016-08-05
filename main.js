@@ -113,6 +113,7 @@ app.controller('showAdventureCtrl', ['$scope', 'dataService', '$stateParams', '$
             console.log('image was clicked');
         };
 
+        $scope.testThisMarkdown = "*this* is interesting; `this` is code";
 
         $scope.handlePhotoClick = function(clicked) {
             $scope.photoOpacity= 0;
