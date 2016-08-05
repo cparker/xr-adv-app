@@ -78,7 +78,8 @@ a:hover {
     margin: 0.8em;
     position: relative;
     flex: 1;
-    min-width: 450px; }
+    min-width: 450px;
+    max-width: 800px; }
     .images .image img {
       width: 100%;
       min-width: 450px;

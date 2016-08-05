@@ -7,7 +7,7 @@
     <div class="images">
         <div ng-repeat="fileNameAndCaption in details.images" class="image">
             <img src="/adventures/{{details.name}}/{{fileNameAndCaption[0]}}"/>
-            <p class="caption" markdown-to-html="fileNameAndCaption[1]"></p>
+            <p ng-hide="fileNameAndCaption[1].length <= 0" class="caption" markdown-to-html="fileNameAndCaption[1]"></p>
         </div>
     </div>
     <div ng-repeat="footer in details.footer" class="footer" markdown-to-html="footer"></div>
