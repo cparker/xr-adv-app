@@ -1,18 +1,20 @@
 {
-  "title" : "Mines Near Magnolia Trailhead",
-  "date" : "2016-07-30T00:00:00-0600",
+    "title": "Mines Near Magnolia Trailhead",
+    "date": "2016-07-30T00:00:00-0600",
 
-  "header" : "I've been wanting to explore the mines near here since last summer.  They are pretty easy to get to.  They are on private land.  So be respectful if you visit.",
+    "header": "I've been wanting to explore the mines near here since last summer.  They are pretty easy to get to.  They are on private land.  So be respectful if you visit.",
 
-  "images" : {
-    "01" : "This is the first thing you see of the Lone Star mine right off of road 105.  It's an old steam boiler.",
-    "02" : "Adjacent to the boiler is a hoist of some kind with these markings",
-    "03" : "This is some kind of cart visible nearby.",
-    "04" : "I think this is the ollapsed headframe, which was the main structure used to hoist things up and down the main mine shaft.  So there there should be a big deep shaft under this pile.",
-    "05" : "This is just a little further off the road.  It's surrounded by a wire fence.  I didn't want to get too close.  It looks deep",
-    "06" : "",
-    "07" : "I was curious about these lakes further down road 105.  There is a sign nearby saying 'private', but these appear to be on Forest Service land.  This is the southern of the two little lakes.",
-    "08" : "I found this little marker near another mine further down 105.  The mine near here has been filled in"
-  },
-  "footer" : "Here is [the fill route (.kmz)](/adventures/july-30-2016-lone-star-mine/july-30-2016-lone-star-mine.kmz)"
+    "images": [
+        ["01", "This is the first thing you see of the Lone Star mine right off of road 105.  It's an old steam boiler."],
+        ["02", "Adjacent to the boiler is a hoist of some kind with these markings"],
+        ["03", "This is some kind of cart visible nearby."],
+        ["04", "I think this is the ollapsed headframe, which was the main structure used to hoist things up and down the main mine shaft.  So there there should be a big deep shaft under this pile."],
+        ["05", "This is just a little further off the road.  It's surrounded by a wire fence.  I didn't want to get too close.  It looks deep"],
+        ["06", ""],
+        ["07", "I was curious about these lakes further down road 105.  There is a sign nearby saying 'private', but these appear to be on Forest Service land.  This is the southern of the two little lakes."],
+        ["08", "I found this little marker near another mine further down 105.  The mine near here has been filled in"],
+        ["09", "This is a picture of the mine near the marker from 1992.  Photo credit to [CO Geological Survey](http://coloradogeologicalsurvey.org/water/abandoned-mine-land/united-states-forest-hazard-abandoned-mine-land-inventory-project/)"],
+        ["10", "Found this strange symbol on a tree leading to some private property"]
+    ],
+    "footer": "Here is [the fill route (.kmz)](/adventures/july-30-2016-lone-star-mine/july-30-2016-lone-star-mine.kmz)"
 }

@@ -134,12 +134,14 @@ module.exports = (() => {
         })
         console.log('images', images)
         let meta = JSON.parse(fs.readFileSync(adventureDir + '/' + req.query.name + '/' + 'meta.json', 'utf-8'))
-        let newImages = _.object(_.map(meta.images, (value, key) => {
+        let newImages = _.map(meta.images, numAndText => {
+            let num = numAndText[0]
+            let text = numAndText[1]
             let matchingFile = _.find(images, i => {
-                return i.startsWith(key)
+                return i.startsWith(num)
             })
-            return [matchingFile,value]
-        }))
+            return [matchingFile,text]
+        })
         meta.images = newImages
         meta.name = req.query.name
 
