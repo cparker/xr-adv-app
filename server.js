@@ -130,7 +130,7 @@ module.exports = (() => {
     let loadAdventureDetails = function(req, res, next) {
         console.log('query', req.query)
         let images = _.filter(fs.readdirSync(adventureDir + '/' + req.query.name), fn => {
-            return fn.match(/^.*?(.png|.jpg|.gif)$/)
+            return fn.match(/^.*?(.png|.jpg|.gif)$/i)
         })
         console.log('images', images)
         let meta = JSON.parse(fs.readFileSync(adventureDir + '/' + req.query.name + '/' + 'meta.json', 'utf-8'))
