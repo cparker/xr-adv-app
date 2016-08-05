@@ -16,5 +16,5 @@
         ["09", "This is a picture of the mine near the marker from 1992.  Photo credit to [CO Geological Survey](http://coloradogeologicalsurvey.org/water/abandoned-mine-land/united-states-forest-hazard-abandoned-mine-land-inventory-project/)"],
         ["10", "Found this strange symbol on a tree leading to some private property"]
     ],
-    "footer": "Here is [the fill route (.kmz)](/adventures/july-30-2016-lone-star-mine/july-30-2016-lone-star-mine.kmz)"
+    "footer": ["Here is [the fill route (.kmz)](/adventures/july-30-2016-lone-star-mine/july-30-2016-lone-star-mine.kmz)"]
 }

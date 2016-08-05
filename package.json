@@ -1,7 +1,7 @@
 {
-  "name": "car-monitor",
+  "name": "xr-adv-app",
   "version": "1.0.0",
-  "description": "server for receiving JSON updates",
+  "description": "Showing off another one of my hobbies",
   "main": "server.js",
   "engines": {
     "node": "6.1"
@@ -10,6 +10,7 @@
     "asyncawait": "^1.0.3",
     "bluebird": "^3.3.5",
     "body-parser": "^1.15.0",
+    "bower": "^1.7.9",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
     "geojson-utils": "^1.1.0",
@@ -30,17 +31,18 @@
     "doc": "doc"
   },
   "scripts": {
+    "postinstall": "bower install;grunt sass",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cparker/car-monitor.git"
+    "url": "https://github.com/cparker/xr-adv-app.git"
   },
   "author": "cp@cjparker.us",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cparker/car-monitor/issues"
+    "url": "https://github.com/cparker/xr-adv-app/issues"
   },
-  "homepage": "https://github.com/cparker/car-monitor#readme"
+  "homepage": "https://github.com/cparker/xr-adv-app#readme"
 }
