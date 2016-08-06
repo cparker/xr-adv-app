@@ -103,8 +103,11 @@ app.controller('welcomeCtrl', ['$scope', 'dataService', '$state',
 ]);
 
 
-app.controller('showAdventureCtrl', ['$scope', 'dataService', '$stateParams', '$rootScope', '$timeout', '$document', '$element', '$state',
-    function($scope, dataService, $stateParams, $rootScope, $timeout, $document, $element, $state) {
+app.controller('showAdventureCtrl', ['$scope', 'dataService', '$stateParams', '$rootScope', '$timeout', '$document', '$element', '$state','$window',
+    function($scope, dataService, $stateParams, $rootScope, $timeout, $document, $element, $state, $window) {
+        $scope.goback = function() {
+          $window.history.back();
+        };
 
         console.log('stateParams', $stateParams);
         $scope.photourl = $stateParams.photourl;
@@ -114,7 +117,7 @@ app.controller('showAdventureCtrl', ['$scope', 'dataService', '$stateParams', '$
         };
 
         $scope.handlePhotoClick = function(clicked) {
-            $scope.photoOpacity= 0;
+            $scope.photoOpacity = 0;
             console.log('clicked', clicked);
             console.log('element', angular.element(clicked.srcElement));
 
@@ -125,7 +128,7 @@ app.controller('showAdventureCtrl', ['$scope', 'dataService', '$stateParams', '$
 
             // wait until the photo gets written into the DOM, then set the opacity
             $timeout(function() {
-                $scope.photoOpacity= 1;
+                $scope.photoOpacity = 1;
             }, 100);
         };
 

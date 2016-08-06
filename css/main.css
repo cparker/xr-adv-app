@@ -64,11 +64,12 @@ a:hover {
   .adventure .date {
     font-size: 10pt; }
 
-.adventure-body .title {
-  margin-left: 0.5em; }
-
-.adventure-body .header {
-  margin-left: 0.9em; }
+.adventure-body {
+  position: relative; }
+  .adventure-body .title {
+    margin-left: 0.5em; }
+  .adventure-body .header {
+    margin-left: 0.9em; }
 
 .images {
   display: flex;
@@ -77,9 +78,10 @@ a:hover {
   .images .image {
     margin: 0.8em;
     position: relative;
-    flex: 1;
+    flex: 1 1 45%;
     min-width: 450px;
-    max-width: 800px; }
+    max-width: 800px;
+    cursor: pointer; }
     .images .image img {
       width: 100%;
       min-width: 450px;
@@ -101,7 +103,29 @@ a:hover {
 
 .photo-dialog {
   z-index: 1000;
-  position: absolute;
-  transition: visibility 0s, opacity 0.25s linear; }
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  border: 3px solid gray;
+  width: 100%;
+  transition: visibility 0s, opacity 0.25s linear;
+  height: 100%;
+  overflow: auto; }
   .photo-dialog img {
-    max-width: 80%; }
+    width: 100%; }
+
+.footer {
+  height: 100%; }
+
+.close {
+  border: 3px solid white;
+  background: black;
+  opacity: 0.5;
+  color: white;
+  padding: 1.5em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer; }
