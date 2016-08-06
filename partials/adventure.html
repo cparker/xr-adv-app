@@ -10,5 +10,7 @@
             <p ng-hide="fileNameAndCaption[1].length <= 0" class="caption" markdown-to-html="fileNameAndCaption[1]"></p>
         </div>
     </div>
-    <div ng-repeat="footer in details.footer" class="footer" markdown-to-html="footer"></div>
+    <div class="footers">
+      <div ng-repeat="footer in details.footer" class="footer" markdown-to-html="footer"></div>
+    </div>
 </div>
