@@ -6,6 +6,8 @@
 
     "images": [
         ["01", "This is the first thing you see of the Lone Star mine right off of road 105.  It's an old steam boiler."],
+        ["01.2", "Same boiler from July 1992.  The picture comes from the excellent [CO Geological Survey Abandoned Mine Lands project](http://coloradogeologicalsurvey.org/water/abandoned-mine-land/united-states-forest-hazard-abandoned-mine-land-inventory-project/)"],
+        ["01.3", "I found a catalog from the [Mine and Smelter Supply Company](https://babel.hathitrust.org/cgi/pt?id=hvd.32044092021070;view=1up;seq=7).  This *horizontal tube boiler* is the closest thing I could find that matches the photo."],
         ["02", "Adjacent to the boiler is a hoist of some kind with these markings"],
         ["03", "This is some kind of cart visible nearby."],
         ["04", "I think this is the ollapsed headframe, which was the main structure used to hoist things up and down the main mine shaft.  So there there should be a big deep shaft under this pile."],
